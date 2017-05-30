@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vasquezr1.myapplication.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="376dp"
+        android:layout_height="505dp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="3dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="124dp"
+            android:layout_above="@+id/bin"
+            android:layout_alignStart="@+id/bin"
+            android:layout_marginBottom="69dp" />
+
+        <EditText
+            android:id="@+id/bin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/hex"
+            android:layout_alignStart="@+id/hex"
+            android:layout_marginBottom="60dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="199dp" />
+
+        <EditText
+            android:id="@+id/hex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/boo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="81dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="38dp" />
+
+        <Button
+            android:id="@+id/boo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="47dp"
+            android:text="Button"
+            tools:ignore="HardcodedText,MissingConstraints"
+            tools:layout_editor_absoluteX="122dp"
+            tools:layout_editor_absoluteY="348dp" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
