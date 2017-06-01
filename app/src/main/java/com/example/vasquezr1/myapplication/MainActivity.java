@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.lang.String;
 
 
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextView mTextMessage;
 
 
     public static int hexIntValue (char hex){
@@ -37,7 +37,44 @@ public class MainActivity extends AppCompatActivity {
             case 'F': return 15;
 
         }
-        return 1;
+        return -1;
+    }
+
+    public static int decIntValue(String dec){
+
+        char recent;
+        int num = 0;
+        for(int i = 0; i < dec.length(); i++) {
+
+            recent = dec.charAt(i);
+
+            switch(recent){
+                case '0': num += 0; break;
+                case '1': num += 1; break;
+                case '2': num += 2; break;
+                case '3': num += 3; break;
+                case '4': num += 4; break;
+                case '5': num += 5; break;
+                case '6': num += 6; break;
+                case '7': num += 7; break;
+                case '8': num += 8; break;
+                case '9': num += 9; break;
+            }
+
+        }
+        return num;
+    }
+
+    public static String decToBin (String dec1){
+        int decInt = Integer.parseInt(dec1);
+        String bin1;
+
+        if(decInt < 0)
+            return "ERROR";
+        else
+            bin1 = Integer.toBinaryString(decInt);
+
+        return bin1;
     }
 
     public static String hexToDec (String hex1){
@@ -47,15 +84,14 @@ public class MainActivity extends AppCompatActivity {
         char lastChar;
 
         for(int i = 1; i <= hex1.length(); i++){
-
             lastChar = hex1.charAt(hex1.length() - i);
 
-            total += hexIntValue(lastChar) * multiplier;
-
-            multiplier *= 16;
-
+            if(hexIntValue(lastChar) == -1)
+                return "ERROR";
+            else
+                total += hexIntValue(lastChar) * multiplier;
+                multiplier *= 16;
         }
-
         return "" + total;
     }
 
@@ -71,9 +107,15 @@ public class MainActivity extends AppCompatActivity {
 
         boo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String u = dec.getText().toString();
 
-                hex.hexToDec(u);
+                String u = hex.getText().toString();
+                String decConverted = hexToDec(u);
+
+                dec.setText(decConverted);
+
+                String binConverted = decToBin(decConverted);
+
+                bin.setText(binConverted);
             }
         });
     }
