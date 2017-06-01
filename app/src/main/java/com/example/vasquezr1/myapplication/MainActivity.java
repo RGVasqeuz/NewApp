@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return -1;
     }
-
+    //TODO hello
     public static int decIntValue(String dec){
 
         char recent;
