@@ -1,5 +1,6 @@
 package com.example.vasquezr1.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -95,6 +96,22 @@ public class MainActivity extends AppCompatActivity {
         return "" + total;
     }
 
+     public void openHex(){
+        Intent intent = new Intent(this,HexActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBin(){
+        Intent intent = new Intent(this,BinActivity.class);
+        startActivity(intent);
+    }
+
+    public void openDec(){
+        Intent intent = new Intent(this,DecActivity.class);
+        startActivity(intent);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +121,25 @@ public class MainActivity extends AppCompatActivity {
         final EditText dec = (EditText) findViewById(R.id.dec);
         final EditText hex = (EditText) findViewById(R.id.hex);
         final EditText bin = (EditText) findViewById(R.id.bin);
+
+        final Button buttonHex = (Button) findViewById(R.id.buttonHex);
+        final Button buttonDec = (Button) findViewById(R.id.buttonDec);
+        final Button buttonBin = (Button) findViewById(R.id.buttonBin);
+
+
+        buttonHex.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {openHex();}
+        });
+
+        buttonBin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {openBin();}
+        });
+
+        buttonDec.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {openDec();}
+        });
+
+
 
         boo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

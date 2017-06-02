@@ -63,6 +63,35 @@
             tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="122dp"
             tools:layout_editor_absoluteY="348dp" />
+
+        <Button
+            android:id="@+id/buttonDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/boo"
+            android:layout_marginBottom="11dp"
+            android:layout_toStartOf="@+id/boo"
+            android:text="@string/decimal" />
+
+        <Button
+            android:id="@+id/buttonHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonDec"
+            android:layout_alignBottom="@+id/buttonDec"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@+id/buttonDec"
+            android:text="Hex"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/buttonBin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/buttonHex"
+            android:layout_marginStart="32dp"
+            android:layout_toEndOf="@+id/buttonHex"
+            android:text="@string/binary" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
