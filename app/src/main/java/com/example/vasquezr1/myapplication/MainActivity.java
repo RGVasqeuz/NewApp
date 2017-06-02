@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
 import java.lang.String;
 
 
@@ -118,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Button boo = (Button) findViewById(R.id.boo);
-        final EditText dec = (EditText) findViewById(R.id.dec);
+        final EditText dec = (EditText) findViewById(R.id.decHex);
         final EditText hex = (EditText) findViewById(R.id.hex);
-        final EditText bin = (EditText) findViewById(R.id.bin);
+        final EditText bin = (EditText) findViewById(R.id.binHex);
 
         final Button buttonHex = (Button) findViewById(R.id.buttonHex);
         final Button buttonDec = (Button) findViewById(R.id.buttonDec);

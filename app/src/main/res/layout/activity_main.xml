@@ -14,7 +14,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/dec"
+            android:id="@+id/decHex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -22,12 +22,12 @@
             tools:ignore="LabelFor,MissingConstraints"
             tools:layout_editor_absoluteX="66dp"
             tools:layout_editor_absoluteY="124dp"
-            android:layout_above="@+id/bin"
-            android:layout_alignStart="@+id/bin"
+            android:layout_above="@+id/binHex"
+            android:layout_alignStart="@+id/binHex"
             android:layout_marginBottom="69dp" />
 
         <EditText
-            android:id="@+id/bin"
+            android:id="@+id/binHex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/hex"

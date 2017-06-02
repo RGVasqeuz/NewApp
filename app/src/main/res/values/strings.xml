@@ -3,4 +3,5 @@
     <string name="name">Name</string>
     <string name="binary">Binary</string>
     <string name="decimal">Decimal</string>
+    <string name="textview">TextView</string>
 </resources>
