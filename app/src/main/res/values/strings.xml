@@ -4,4 +4,14 @@
     <string name="binary">Binary</string>
     <string name="decimal">Decimal</string>
     <string name="textview">TextView</string>
+    <string name="calculate">calculate</string>
+    <string name="binaryLBL">Binary:</string>
+    <string name="decimal2">Decimal:</string>
+    <string name="decimal3">Decimal:</string>
+    <string name="binary2">Binary</string>
+    <string name="hex2">Hex</string>
+    <string name="hex3">Hex</string>
+    <string name="binary4">Binary</string>
+    <string name="hex4">Hex</string>
+    <string name="decimalHEX">Decimal</string>
 </resources>

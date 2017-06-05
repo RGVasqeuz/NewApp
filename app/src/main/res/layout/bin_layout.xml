@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <EditText
+            android:id="@+id/hexInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/HexLBL"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/binDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/hexInput"
+            android:layout_alignStart="@+id/HexLBL"
+            android:layout_below="@+id/hexInput"
+            android:layout_marginTop="100dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20dp"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <TextView
+            android:id="@+id/hexDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/binDec"
+            android:layout_alignStart="@+id/binDec"
+            android:layout_below="@+id/binDec"
+            android:layout_marginTop="112dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/calculateHex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:textSize="20dp"
+            tools:ignore="HardcodedText,SpUsage"
+            android:layout_above="@+id/toDec"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/HexLBL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:text="Binary"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/hexLBL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hex:"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:layout_alignBaseline="@+id/hexDec"
+            android:layout_alignBottom="@+id/hexDec"
+            android:layout_toStartOf="@+id/hexDec" />
+
+        <TextView
+            android:id="@+id/decLBL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/binDec"
+            android:layout_alignBottom="@+id/binDec"
+            android:layout_toStartOf="@+id/binDec"
+            android:text="@string/decimal2"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/toDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hex3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            tools:ignore="RelativeOverlap" />
+
+        <Button
+            android:id="@+id/toHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calculateHex"
+            android:layout_centerHorizontal="true"
+            android:text="home"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/toDecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="Decimal"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
 </LinearLayout>

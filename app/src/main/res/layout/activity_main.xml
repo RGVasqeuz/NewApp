@@ -7,91 +7,56 @@
     tools:context="com.example.vasquezr1.myapplication.MainActivity">
 
     <RelativeLayout
-        android:layout_width="376dp"
-        android:layout_height="505dp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="3dp"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/decHex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor,MissingConstraints"
-            tools:layout_editor_absoluteX="66dp"
-            tools:layout_editor_absoluteY="124dp"
-            android:layout_above="@+id/binHex"
-            android:layout_alignStart="@+id/binHex"
-            android:layout_marginBottom="69dp" />
-
-        <EditText
-            android:id="@+id/binHex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/hex"
-            android:layout_alignStart="@+id/hex"
-            android:layout_marginBottom="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor,MissingConstraints"
-            tools:layout_editor_absoluteX="66dp"
-            tools:layout_editor_absoluteY="199dp" />
-
-        <EditText
-            android:id="@+id/hex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/boo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="81dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor,MissingConstraints"
-            tools:layout_editor_absoluteX="66dp"
-            tools:layout_editor_absoluteY="38dp" />
-
-        <Button
-            android:id="@+id/boo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="47dp"
-            android:text="Button"
-            tools:ignore="HardcodedText,MissingConstraints"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="348dp" />
+        android:layout_width="382dp"
+        android:layout_height="521dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-5dp">
 
         <Button
             android:id="@+id/buttonDec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/boo"
-            android:layout_marginBottom="11dp"
-            android:layout_toStartOf="@+id/boo"
-            android:text="@string/decimal" />
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_alignStart="@+id/buttonHex"
+            android:layout_below="@+id/buttonHex"
+            android:text="@string/decimal"
+            android:textSize="40dp"
+            tools:ignore="SpUsage" />
 
         <Button
             android:id="@+id/buttonHex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/buttonDec"
-            android:layout_alignBottom="@+id/buttonDec"
-            android:layout_marginStart="14dp"
-            android:layout_toEndOf="@+id/buttonDec"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_alignStart="@+id/buttonBin"
+            android:layout_below="@+id/buttonBin"
             android:text="Hex"
-            tools:ignore="HardcodedText" />
+            android:textSize="40dp"
+            tools:ignore="HardcodedText,SpUsage" />
 
         <Button
             android:id="@+id/buttonBin"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="78dp"
+            android:text="@string/binary"
+            android:textSize="40sp"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/buttonHex"
-            android:layout_marginStart="32dp"
-            android:layout_toEndOf="@+id/buttonHex"
-            android:text="@string/binary" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:text="HEXADECIMAL BINARY CONVERTER"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            tools:ignore="HardcodedText" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

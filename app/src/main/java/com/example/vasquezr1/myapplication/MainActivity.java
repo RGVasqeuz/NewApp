@@ -40,28 +40,54 @@ public class MainActivity extends AppCompatActivity {
         }
         return -1;
     }
-    //TODO hello
+
+    public static char decHexValue (int dec){
+
+        switch(dec){
+
+            case 0: return '0';
+            case 1: return '1';
+            case 2: return '2';
+            case 3: return '3';
+            case 4: return '4';
+            case 5: return '5';
+            case 6: return '6';
+            case 7: return '7';
+            case 8: return '8';
+            case 9: return '9';
+            case 10: return 'A';
+            case 11: return 'B';
+            case 12: return 'C';
+            case 13: return 'D';
+            case 14: return 'E';
+            case 15: return 'F';
+
+        }
+        return ' ';
+    }
+
     public static int decIntValue(String dec){
 
         char recent;
         int num = 0;
-        for(int i = 0; i < dec.length(); i++) {
+        int multiplier = 1;
+        for(int i = dec.length() - 1; i >= 0; i--) {
 
             recent = dec.charAt(i);
 
             switch(recent){
-                case '0': num += 0; break;
-                case '1': num += 1; break;
-                case '2': num += 2; break;
-                case '3': num += 3; break;
-                case '4': num += 4; break;
-                case '5': num += 5; break;
-                case '6': num += 6; break;
-                case '7': num += 7; break;
-                case '8': num += 8; break;
-                case '9': num += 9; break;
+                case '0': num += (0 * multiplier); break;
+                case '1': num += (1 * multiplier); break;
+                case '2': num += (2 * multiplier); break;
+                case '3': num += (3 * multiplier); break;
+                case '4': num += (4 * multiplier); break;
+                case '5': num += (5 * multiplier); break;
+                case '6': num += (6 * multiplier); break;
+                case '7': num += (7 * multiplier); break;
+                case '8': num += (8 * multiplier); break;
+                case '9': num += (9 * multiplier); break;
             }
-
+            multiplier *= 10;
         }
         return num;
     }
@@ -96,7 +122,33 @@ public class MainActivity extends AppCompatActivity {
         return "" + total;
     }
 
-     public void openHex(){
+    public static String binToDec(String bin1){
+
+        int dec = Integer.parseInt(bin1, 2);
+
+        String decString = "" + dec;
+
+        return decString;
+    }
+
+
+    public static String decToHex(String dec1) {
+        String hex = "";
+        int dec = decIntValue(dec1);
+        int remainder;
+
+        while (dec > 0) {
+
+            remainder = dec % 16;
+            hex = decHexValue(remainder) + hex;
+            dec = dec / 16;
+
+        }
+        return hex;
+    }
+
+
+    public void openHex(){
         Intent intent = new Intent(this,HexActivity.class);
         startActivity(intent);
     }
@@ -111,16 +163,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openHome(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final Button boo = (Button) findViewById(R.id.boo);
-        final EditText dec = (EditText) findViewById(R.id.decHex);
-        final EditText hex = (EditText) findViewById(R.id.hex);
-        final EditText bin = (EditText) findViewById(R.id.binHex);
 
         final Button buttonHex = (Button) findViewById(R.id.buttonHex);
         final Button buttonDec = (Button) findViewById(R.id.buttonDec);
@@ -141,19 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        boo.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                String u = hex.getText().toString();
-                String decConverted = hexToDec(u);
-
-                dec.setText(decConverted);
-
-                String binConverted = decToBin(decConverted);
-
-                bin.setText(binConverted);
-            }
-        });
     }
 
 }
