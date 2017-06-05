@@ -6,16 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import java.lang.Character;
 import java.lang.String;
 
 
 
 public class MainActivity extends AppCompatActivity {
+//Taught me how to link layouts to Activities and open new layouts from other layouts: https://www.youtube.com/watch?v=MCf7EWLVWO8
 
 
 
-
+    //Finds integer value of hex characters
     public static int hexIntValue (char hex){
 
         switch(hex){
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return -1;
     }
-
+    //Finds char value for Decimal integers in Hex
     public static char decHexValue (int dec){
 
         switch(dec){
@@ -66,35 +67,11 @@ public class MainActivity extends AppCompatActivity {
         return ' ';
     }
 
-    public static int decIntValue(String dec){
-
-        char recent;
-        int num = 0;
-        int multiplier = 1;
-        for(int i = dec.length() - 1; i >= 0; i--) {
-
-            recent = dec.charAt(i);
-
-            switch(recent){
-                case '0': num += (0 * multiplier); break;
-                case '1': num += (1 * multiplier); break;
-                case '2': num += (2 * multiplier); break;
-                case '3': num += (3 * multiplier); break;
-                case '4': num += (4 * multiplier); break;
-                case '5': num += (5 * multiplier); break;
-                case '6': num += (6 * multiplier); break;
-                case '7': num += (7 * multiplier); break;
-                case '8': num += (8 * multiplier); break;
-                case '9': num += (9 * multiplier); break;
-            }
-            multiplier *= 10;
-        }
-        return num;
-    }
-
+    //Converts Decimal to Binary
     public static String decToBin (String dec1){
-        int decInt = Integer.parseInt(dec1);
-        String bin1;
+
+        int decInt = Integer.parseInt(dec1);//gets integer value from decimal string
+        String bin1;//binary String
 
         if(decInt < 0)
             return "ERROR";
@@ -103,90 +80,92 @@ public class MainActivity extends AppCompatActivity {
 
         return bin1;
     }
-
+    //Converts hex string to Decimal string
     public static String hexToDec (String hex1){
 
-        int multiplier = 1;
+        int multiplier = 1;//multiplier increase by 16 in order to respond to hex
         int total = 0;
         char lastChar;
-
+        //For loop to go througjh characters in hex string
         for(int i = 1; i <= hex1.length(); i++){
-            lastChar = hex1.charAt(hex1.length() - i);
-
+            //Checks most recent char and sets to uppercase
+            lastChar = Character.toUpperCase(hex1.charAt(hex1.length() - i)) ;
+            //if an invalid input Error message is sent
             if(hexIntValue(lastChar) == -1)
                 return "ERROR";
             else
+                //total int value is added per character
                 total += hexIntValue(lastChar) * multiplier;
                 multiplier *= 16;
         }
-        return "" + total;
+        return "" + total;//Total is returned in string format
     }
-
+    //Binary to Decimal Converter method
     public static String binToDec(String bin1){
-
+        //Pre-existing Interger method existed
         int dec = Integer.parseInt(bin1, 2);
 
-        String decString = "" + dec;
+        String decString = "" + dec;//Set it to a String
 
         return decString;
     }
 
-
+    //Decimal to Hex Converter
     public static String decToHex(String dec1) {
+        // String to store hex string
         String hex = "";
-        int dec = decIntValue(dec1);
-        int remainder;
-
+        //gets integer value from string decimal value
+        int dec = Integer.parseInt(dec1);
+        int remainder;//Remainder is left over to be checks if its value corelates with any character list
+        //While decimal is greater than 0 loop will continue
         while (dec > 0) {
-
+            //
             remainder = dec % 16;
+            //Checks remainder to convert to hex character and add on to previous hex string
             hex = decHexValue(remainder) + hex;
+            //Decimal is lessened to subtract remainder
             dec = dec / 16;
 
         }
         return hex;
     }
 
-
+    //Opens hex window
     public void openHex(){
         Intent intent = new Intent(this,HexActivity.class);
         startActivity(intent);
     }
-
+    //Opens Binary window
     public void openBin(){
         Intent intent = new Intent(this,BinActivity.class);
         startActivity(intent);
     }
-
+    //Opens Decimal Window
     public void openDec(){
         Intent intent = new Intent(this,DecActivity.class);
         startActivity(intent);
     }
 
-    public void openHome(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Buttons to go to different windows
         final Button buttonHex = (Button) findViewById(R.id.buttonHex);
         final Button buttonDec = (Button) findViewById(R.id.buttonDec);
         final Button buttonBin = (Button) findViewById(R.id.buttonBin);
 
-
+        //Opens Hex window
         buttonHex.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {openHex();}
         });
-
+        //Opens Binary Window
         buttonBin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {openBin();}
         });
-
+        //Opens Decimal Window
         buttonDec.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {openDec();}
         });

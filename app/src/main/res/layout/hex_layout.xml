@@ -100,7 +100,7 @@
             android:layout_alignParentBottom="true"
             android:layout_toStartOf="@+id/hexLBL"
             android:text="@string/decimalHEX"
-            tools:ignore="UnknownIdInLayout" />
+            tools:ignore="UnknownId,UnknownIdInLayout" />
 
         <Button
             android:id="@+id/toHome"

@@ -14,4 +14,5 @@
     <string name="binary4">Binary</string>
     <string name="hex4">Hex</string>
     <string name="decimalHEX">Decimal</string>
+    <string name="binary3">Binary</string>
 </resources>
